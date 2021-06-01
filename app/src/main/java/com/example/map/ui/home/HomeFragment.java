@@ -261,6 +261,7 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
                     m3.remove();
                     m4.remove();
                 }
+
                 Dialog d = new WorkWithDialog().createDialog();
                 d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 d.show();
