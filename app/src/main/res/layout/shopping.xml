@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/SelectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/select_destinations"
+        android:textColor="#35A6D3"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="9dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardSpace8"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardMall"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/mall_image" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfHospitals"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/mall"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch6"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="9"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/Space15"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardMusic"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space18"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/IconTeeth"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/music_image" />
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameDentistry"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/music_store"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch7"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="10"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace7"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardElectronic"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space16"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/IconPlage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/electronic_image" />
+
+                    <TextView
+                        android:id="@+id/textView68"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfPharmacy"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/electronics_store"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch8"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="11"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace10"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardClothing"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space17"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/IconClothing"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/clothes_image" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfClothing"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/clothing_store"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch9"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="12"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace11"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardHousehold"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space19"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/IconHousehold"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/household_image" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfHousehold"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/household_store"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch10"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="13"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace12"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardVape"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space21"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/IconVape"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/vape_image" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfVape"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/vape_shop"
+                        android:textSize="24sp" />
+
+                    <Switch
+                        android:id="@+id/switch11"
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="14"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/cardSpace9"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/saveSettingsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/save" />
+
+</LinearLayout>

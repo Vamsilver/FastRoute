@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/SelectText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Select a category"
+                android:textColor="#35A6D3"
+                android:textSize="24sp" />
+
+            <CheckBox
+                android:id="@+id/sitCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sit for a while"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/RelaxCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Relax"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/PlageCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Plage"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/HospitalCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Hospitals"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/PharmacyCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Pharmacy"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/DenistCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Dentistry"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/CafeCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Eat in the cafeteria"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/BakeryCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Bakery"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/SuperCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Supermarket"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/ToiletCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Toilet"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/MallCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Mall"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/MusicCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Music Store"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/ElectronCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Electronics store"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/ClothCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Clothing store"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/HouseholdCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Household store"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/VapeCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Vape shop"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/SportShopCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sports shop"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/JewCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Jewerely store"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/AtmCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="ATM"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/BankCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Bank"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/SportGroundsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sports grounds"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/TattooCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Tattoo parlor"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/MuseumCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Museum"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/TheatreCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Theatre"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/OperaCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Opera"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/CarCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Car service"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/saveSettingsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="SAVE" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

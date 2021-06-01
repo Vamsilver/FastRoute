@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#FFFFFF">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="15dp"
+        app:backgroundTint="#96CEF4"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="end|bottom"
+        app:layout_constraintBottom_toTopOf="@+id/GoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_mylocation"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/PlusMarkerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:alpha="1"
+        app:backgroundTint="#14FF47"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="end|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/plus_image"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/SearchBtn"
+        android:layout_width="95dp"
+        android:layout_height="53dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Search"
+        android:textSize="12sp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+    <Button
+        android:id="@+id/PlusZoomBtn"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="24dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/minusZoomBtn"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlusZoomBtn" />
+
+    <ImageButton
+        android:id="@+id/GoBtn"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/destination_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/SelectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/select_a_category"
+        android:textColor="#35A6D3"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="9dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="463dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardSpace8"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardRelaxation"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/relax_image" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfCategory"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/relaxation"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/CardSpace"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardHealth"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space1"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/hospitals_image" />
+
+                    <TextView
+                        android:id="@+id/Space2"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfPlage"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/health"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardEat"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space3"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/eat_image" />
+
+                    <TextView
+                        android:id="@+id/Space4"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfEat"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/to_eat"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace3"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardShop"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space5"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/shop_image" />
+
+                    <TextView
+                        android:id="@+id/Space6"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfShop"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/shopping"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace2"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardMoney"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space7"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/bank_image" />
+
+                    <TextView
+                        android:id="@+id/Space8"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfBank"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/money"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace4"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardOther"
+                android:layout_width="match_parent"
+                android:layout_height="58dp">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space16"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon8"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/other_image" />
+
+                    <TextView
+                        android:id="@+id/Space17"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfOther"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Other"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace6"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardSport"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                app:cardBackgroundColor="#BDB3B3">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space11"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon6"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/sport_image" />
+
+                    <TextView
+                        android:id="@+id/Space12"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfSport"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/sport"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace15"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardEnter"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                app:cardBackgroundColor="#BDB3B3">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space9"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon5"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/tickets_image" />
+
+                    <TextView
+                        android:id="@+id/Space10"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfEnter"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/entertainment"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace5"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardCar"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                app:cardBackgroundColor="#BDB3B3">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Space13"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/Icon7"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="TODO"
+                        android:foreground="@drawable/car_image" />
+
+                    <TextView
+                        android:id="@+id/Space14"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/NameOfCar"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/car"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/cardSpace7"
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/saveSettingsBtnCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/save" />
+
+</LinearLayout>
