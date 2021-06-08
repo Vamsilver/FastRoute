@@ -20,13 +20,13 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.map.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/change_profile"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:name="com.example.map.MapFragment"
-        android:id="@+id/nav_setting"
-        android:label="Profile setting"
-        tools:layout="@layout/fragment_map"/>
+        android:id="@+id/nav_exit"
+        android:label="Exit"
+        tools:layout="@layout/category_inf"/>
 
 </navigation>

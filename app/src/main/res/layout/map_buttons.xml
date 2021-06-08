@@ -59,20 +59,22 @@
 
     <Button
         android:id="@+id/PlusZoomBtn"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="24dp"
+        android:backgroundTint="#C800FF"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/minusZoomBtn"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
+        android:backgroundTint="#C800FF"
         android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PlusZoomBtn" />

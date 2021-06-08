@@ -41,7 +41,8 @@
         android:text="@string/registration"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StartPas" />
+        app:layout_constraintTop_toBottomOf="@+id/StartPas"
+        app:rippleColor="#FFFDFD" />
 
     <Button
         android:id="@+id/StartLogBtn"

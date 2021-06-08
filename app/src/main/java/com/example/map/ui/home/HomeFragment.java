@@ -3,6 +3,7 @@
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,11 +22,14 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.map.BuildConfig;
 import com.example.map.MyOpenHelper;
 import com.example.map.R;
 
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -104,11 +108,12 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
         public void onMapReady(GoogleMap googleMap) {
             mMap = googleMap;
 
-            dbHelper = new MyOpenHelper(getContext(), "MyDB3", null, 1);
+            dbHelper = new MyOpenHelper(getContext(), "MyDB4", null, 1);
             db = dbHelper.getReadableDatabase();
 
             if(isGeoDisabled()) {
                 Dialog d = new DialogWithGeo().createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                 d.show();
             }
 
@@ -173,6 +178,12 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
                     if (Objects.equals(m3.getTag(), 0) && Objects.equals(m4.getTag(), 0)) {
                         m3.remove();
                         m4.remove();
+                    }
+                }
+                if( p1 != null && p2 != null) {
+                    if (Objects.equals(p1.getTag(), 0) && Objects.equals(p2.getTag(), 0)) {
+                        p1.remove();
+                        p2.remove();
                     }
                 }
 
@@ -261,7 +272,6 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
                     m3.remove();
                     m4.remove();
                 }
-
                 Dialog d = new WorkWithDialog().createDialog();
                 d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 d.show();
@@ -269,6 +279,12 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
 
         GoBtn.setOnClickListener( b-> {
             Findroutes(start, end);
+        });
+
+        fabPlusMark.setOnClickListener(b -> {
+            Dialog d = new WorkWithAdd().createDialog();
+            d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            d.show();
         });
 
         return v;
@@ -460,11 +476,11 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
 
             Button btn = dialogView.findViewById(R.id.saveSettingsBtnCategory);
             btn.setOnClickListener(b -> {
+                mMap.clear();
                 for(int i = 0; i < activeSwitch.size(); i++){
                     @SuppressLint("Recycle") Cursor cursor2 = db.rawQuery("SELECT * FROM markers WHERE idCategory = ?",new String[]{activeSwitch.get(i).getText().toString()});
                     if(cursor2.getCount() > 0){
                         cursor2.moveToFirst();
-                        mMap.clear();
                         for (int j = 1; j <= cursor2.getCount(); j++){
 
                             LatLng pos = new LatLng(cursor2.getFloat(cursor2.getColumnIndex("lat")),
@@ -563,20 +579,294 @@ public class HomeFragment extends Fragment implements GoogleMap.OnMarkerClickLis
             Button btn = dialogView.findViewById(R.id.saveSettingsBtn);
             btn.setOnClickListener(b -> {
                 ArrayList<View> touchableViews = dialogView.getTouchables();
-                int j = 0;
                 for (View v:touchableViews){
                     if (v instanceof Switch){
                         if (((Switch) v).isChecked()){
-                            j++;
                             isCategoryRepeat = false;
                             for(int i = 0; i < activeSwitch.size(); i++){
                                 if(activeSwitch.get(i).getText().toString().equals(((Switch) v).getText().toString()))
                                     isCategoryRepeat = true;
                             }
                             if(activeSwitch.size() == 0 || !isCategoryRepeat) activeSwitch.add((Switch) v);
-                            Toast.makeText(getContext(),activeSwitch.get(activeSwitch.size()-1).getText().toString(), Toast.LENGTH_LONG).show();
                         }
                     }
+                }
+                closeDialog();
+            });
+        }
+
+        public Dialog createDialog(){
+            d =  builder.create();
+            return d;
+        }
+        public void closeDialog(){
+            d.cancel();
+        }
+    }
+
+    class WorkWithAdd{
+        private AlertDialog.Builder builder;
+        private Dialog d;
+        CardView relax, health, eat,
+                shop, money, other;
+
+        public WorkWithAdd(){
+            LayoutInflater factory = LayoutInflater.from(getContext());
+            builder = new AlertDialog.Builder(getContext());
+            View dialogView = factory.inflate(R.layout.add_marker, null);
+            builder.setView(dialogView);
+
+            relax = dialogView.findViewById(R.id.AddCardRelaxation);
+            health = dialogView.findViewById(R.id.AddCardHealth);
+            eat = dialogView.findViewById(R.id.AddCardEat);
+            shop = dialogView.findViewById(R.id.AddCardShop);
+            money = dialogView.findViewById(R.id.AddCardMoney);
+            other = dialogView.findViewById(R.id.AddCardOther);
+
+            relax.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(1).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+            health.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(2).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+            eat.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(3).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+            shop.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(4).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+            money.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(5).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+            other.setOnClickListener(n->{
+                Dialog d = new WorkWithAddMarker(6).createDialog();
+                d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                d.show();
+            });
+
+
+            Button btn = dialogView.findViewById(R.id.AddsaveSettingsBtnCategory);
+            btn.setOnClickListener(b -> {
+                closeDialog();
+            });
+        }
+
+        public Dialog createDialog(){
+            d =  builder.create();
+            return d;
+        }
+        public void closeDialog(){
+            d.cancel();
+        }
+
+
+    }
+
+    class WorkWithAddMarker {
+        private AlertDialog.Builder builder;
+        private Dialog d;
+        private int id;
+        View dialogView;
+        @SuppressLint("InflateParams")
+        public WorkWithAddMarker(int id){
+            LayoutInflater factory = LayoutInflater.from(getContext());
+            builder = new AlertDialog.Builder(getContext());
+            this.id = id;
+            switch (id){
+                case (1):{
+                    dialogView = factory.inflate(R.layout.add_relaxation, null);
+                    builder.setView(dialogView);
+                    CardView park = dialogView.findViewById(R.id.AddCardPark);
+                    park.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(1).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView plage = dialogView.findViewById(R.id.AddCardPlage);
+                    plage.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(2).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+                case (2):{
+                    dialogView = factory.inflate(R.layout.add_health, null);
+                    builder.setView(dialogView);
+                    CardView hospital = dialogView.findViewById(R.id.AddCardHospitals);
+                    hospital.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(3).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView denistry = dialogView.findViewById(R.id.AddCardDentistry);
+                    denistry.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(4).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView pharmacy = dialogView.findViewById(R.id.AddCardPharmacy);
+                    pharmacy.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(5).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+                case(3):{
+                    dialogView = factory.inflate(R.layout.add_to_eat, null);
+                    builder.setView(dialogView);
+                    CardView cafe = dialogView.findViewById(R.id.AddCardCafe);
+                    cafe.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(6).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView bakery = dialogView.findViewById(R.id.AddCardBakery);
+                    bakery.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(7).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView supermarket = dialogView.findViewById(R.id.AddCardSupermarket);
+                    supermarket.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(8).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+                case(4):{
+                    dialogView = factory.inflate(R.layout.add_shopping, null);
+                    builder.setView(dialogView);
+                    CardView mall = dialogView.findViewById(R.id.AddCardMall);
+                    mall.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(9).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView MusicStore = dialogView.findViewById(R.id.AddCardMusic);
+                    MusicStore.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(10).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView ElecStore = dialogView.findViewById(R.id.AddCardElectronic);
+                    ElecStore.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(11).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView ClothStore = dialogView.findViewById(R.id.AddCardClothing);
+                    ClothStore.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(12).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView HouseStore = dialogView.findViewById(R.id.AddCardHousehold);
+                    HouseStore.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(13).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView VapeStore = dialogView.findViewById(R.id.AddCardVape);
+                    VapeStore.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(14).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+                case(5):{
+                    dialogView = factory.inflate(R.layout.add_money, null);
+                    builder.setView(dialogView);
+                    CardView ATM = dialogView.findViewById(R.id.AddCardATM);
+                    ATM.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(15).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView Bank = dialogView.findViewById(R.id.AddCardBank);
+                    Bank.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(16).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+                case(6):{
+                    dialogView = factory.inflate(R.layout.add_other, null);
+                    builder.setView(dialogView);
+                    CardView WC = dialogView.findViewById(R.id.AddCardToilet);
+                    WC.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(17).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    CardView Railway = dialogView.findViewById(R.id.AddCardRailwayStation);
+                    Railway.setOnClickListener(m -> {
+                        Dialog d = new WorkWithAddNameMarker(18).createDialog();
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        d.show();
+                    });
+                    break;
+                }
+            }
+
+            Button btn = dialogView.findViewById(R.id.AddsaveSettingsBtn);
+            btn.setOnClickListener(b -> {
+                closeDialog();
+            });
+        }
+
+        public Dialog createDialog(){
+            d =  builder.create();
+            return d;
+        }
+        public void closeDialog(){
+            d.cancel();
+        }
+    }
+
+    class WorkWithAddNameMarker{
+        private AlertDialog.Builder builder;
+        private Dialog d;
+        private int id;
+        View dialogView;
+        @SuppressLint("InflateParams")
+        public WorkWithAddNameMarker(int id){
+            LayoutInflater factory = LayoutInflater.from(getContext());
+            builder = new AlertDialog.Builder(getContext());
+            dialogView = factory.inflate(R.layout.dialog_add_marker, null);
+            builder.setView(dialogView);
+            this.id = id;
+
+            EditText AddNameMarker = dialogView.findViewById(R.id.Add_marker_name);
+            EditText AddDescMarker = dialogView.findViewById(R.id.Add_marker_description);
+            Button btn = dialogView.findViewById(R.id.AddMarker);
+            btn.setOnClickListener(b -> {
+                Cursor cur = db.rawQuery("SELECT * FROM markers WHERE lat = ? AND lot = ?", new String[]{String.valueOf(m1.getPosition().latitude), String.valueOf(m1.getPosition().longitude)} );
+                if(cur.getCount() == 0){
+                    ContentValues newMarker = new ContentValues();
+                    newMarker.put("name", AddNameMarker.getText().toString());
+                    newMarker.put("lat", (float) m1.getPosition().latitude);
+                    newMarker.put("lot", (float) m1.getPosition().longitude);
+                    newMarker.put("idCategory", id);
+                    db.insert("markers", null, newMarker);
+                    cur.close();
+                }
+                else{
+                    Toast.makeText(getContext(),"There is already such a place", Toast.LENGTH_LONG).show();
                 }
                 closeDialog();
             });

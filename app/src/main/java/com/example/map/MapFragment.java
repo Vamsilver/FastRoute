@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -50,18 +51,7 @@ public class MapFragment extends Fragment implements GoogleMap.OnMarkerClickList
 
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            mainMap = googleMap;
-            LatLng kazan = new LatLng(56,50);
-            LatLng kazan1 = new LatLng(55,50);
-            LatLng kazan2 = new LatLng(57,50);
-            Marker m1 = googleMap.addMarker(new MarkerOptions().position(kazan).title("Marker in Kazan"));
-            Marker m2 = googleMap.addMarker(new MarkerOptions().position(kazan1).title("Marker in Kazan"));
-            Marker m3 = googleMap.addMarker(new MarkerOptions().position(kazan2).title("Marker in Kazan"));
-            m1.setTag(1);
-            m2.setTag(2);
-            m3.setTag(3);
-            mainMap.setOnMarkerClickListener(MapFragment.this::onMarkerClick);
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kazan, 5));
+
         }
     };
 
@@ -70,54 +60,24 @@ public class MapFragment extends Fragment implements GoogleMap.OnMarkerClickList
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_map, container, false);
+        return inflater.inflate(R.layout.category_inf, container, false);
     }
 
     @Override
     public boolean onMarkerClick(@NonNull Marker marker) {
-        switch ((int)marker.getTag()){
-            case 1:
-                Toast.makeText(getContext(), "1",Toast.LENGTH_SHORT).show();
-                break;
-            case 2:
-                Toast.makeText(getContext(), "2",Toast.LENGTH_SHORT).show();
-                break;
-            case 3:
-                Toast.makeText(getContext(), "3",Toast.LENGTH_SHORT).show();
-                break;
-        }
         return false;
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.main, menu);
-        super.onCreateOptionsMenu(menu,inflater);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
-        requestPermision();
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
-        }
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
     }
 
-    private void requestPermision()
-    {
-        if(ContextCompat.checkSelfPermission(getContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    LOCATION_REQUEST_CODE);
-        }
-        else{
-            locationPermission=true;
-        }
-    }
 }

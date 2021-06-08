@@ -14,10 +14,11 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/profile_settings_image"
+            android:title="@string/change_profile" />
         <item
-            android:id="@+id/nav_setting"
-            android:title="Profile setting"/>
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/exit_image"
+            android:title="@string/exit" />
     </group>
 </menu>

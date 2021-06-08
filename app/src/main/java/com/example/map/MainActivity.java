@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    View exit;
     TextView login, email;
     static MyOpenHelper dbHelper;
     SQLiteDatabase db;
@@ -31,23 +32,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        dbHelper = new MyOpenHelper(this, "MyDB3", null, 1);
+        dbHelper = new MyOpenHelper(this, "MyDB4", null, 1);
         db = dbHelper.getReadableDatabase();
-
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
         login = header.findViewById(R.id.HeaderLogin);
         email = header.findViewById(R.id.HeaderEmail);
+
         email.setText(getIntent().getExtras().getString("email"));
         login.setText(getIntent().getExtras().getString("login"));
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_exit)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -69,5 +68,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
 }

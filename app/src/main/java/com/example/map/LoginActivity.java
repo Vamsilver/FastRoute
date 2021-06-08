@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        dbHelper = new MyOpenHelper(this, "MyDB3", null, 1);
+        dbHelper = new MyOpenHelper(this, "MyDB4", null, 1);
         db = dbHelper.getReadableDatabase();
 
         log_or_email = findViewById(R.id.StartLogOrEmail);

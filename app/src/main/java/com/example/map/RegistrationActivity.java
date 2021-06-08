@@ -17,7 +17,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     static MyOpenHelper dbHelper;
     SQLiteDatabase db;
-    Button reg;
+    Button reg, back;
     EditText log, pass, email;
     TextView logExc, passExc, emailExc;
 
@@ -25,7 +25,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg);
-        dbHelper = new MyOpenHelper(this, "MyDB3", null, 1);
+        dbHelper = new MyOpenHelper(this, "MyDB4", null, 1);
         db = dbHelper.getReadableDatabase();
 
         log = findViewById(R.id.regLogin);
@@ -35,28 +35,33 @@ public class RegistrationActivity extends AppCompatActivity {
         logExc = findViewById(R.id.loginExcText);
         emailExc = findViewById(R.id.emailExcText);
         passExc = findViewById(R.id.passExcText);
+        back = findViewById(R.id.BackBtn);
 
-            reg.setOnClickListener(v -> {
-                if(log.getText().length() < 5) { logExc.setAlpha(0); }
-                if(pass.getText().length() < 6) { passExc.setAlpha(0); }
-                if(isValidEmail(email.getText().toString())) { emailExc.setAlpha(0); }
-                if(log.getText().length() >= 5 && isValidEmail(email.getText().toString()) && pass.getText().toString().length() >= 6) {
-                Cursor c = db.rawQuery("SELECT * FROM user WHERE email = ? AND login = ?", new String[]{email.getText().toString(), log.getText().toString()});
-                if (c.getCount() > 0) {
-                    Toast.makeText(getApplicationContext(), "A user with the same email or name already exists", Toast.LENGTH_LONG).show();
-                } else {
-                    ContentValues newUser = new ContentValues();
-                    newUser.put("login", log.getText().toString());
-                    newUser.put("pass", pass.getText().toString());
-                    newUser.put("email", email.getText().toString());
-                    db.insert("user", null, newUser);
-                    c.close();
-                    finish();
-                }
-            }else
-                if(log.getText().length() < 5) { logExc.setAlpha(1); }
-                if(!isValidEmail(email.getText().toString())) { emailExc.setAlpha(1); }
-                if(pass.getText().toString().length() < 6) { passExc.setAlpha(1); }
+        reg.setOnClickListener(v -> {
+            if(log.getText().length() < 5) { logExc.setAlpha(0); }
+            if(pass.getText().length() < 6) { passExc.setAlpha(0); }
+            if(isValidEmail(email.getText().toString())) { emailExc.setAlpha(0); }
+            if(log.getText().length() >= 5 && isValidEmail(email.getText().toString()) && pass.getText().toString().length() >= 6) {
+            Cursor c = db.rawQuery("SELECT * FROM user WHERE email = ? AND login = ?", new String[]{email.getText().toString(), log.getText().toString()});
+            if (c.getCount() > 0) {
+                Toast.makeText(getApplicationContext(), "A user with the same email or name already exists", Toast.LENGTH_LONG).show();
+            } else {
+                ContentValues newUser = new ContentValues();
+                newUser.put("login", log.getText().toString());
+                newUser.put("pass", pass.getText().toString());
+                newUser.put("email", email.getText().toString());
+                db.insert("user", null, newUser);
+                c.close();
+                finish();
+            }
+        }else
+            if(log.getText().length() < 5) { logExc.setAlpha(1); }
+            if(!isValidEmail(email.getText().toString())) { emailExc.setAlpha(1); }
+            if(pass.getText().toString().length() < 6) { passExc.setAlpha(1); }
+        });
+
+        back.setOnClickListener( v-> {
+            finish();
         });
     }
 
